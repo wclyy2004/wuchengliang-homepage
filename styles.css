@@ -1,0 +1,501 @@
+:root {
+  --bg: #ffffff;
+  --text: #13202b;
+  --muted: #5f6d78;
+  --line: #dbe5eb;
+  --navy: #14334a;
+  --blue: #1f5f88;
+  --teal: #1d8a8a;
+  --teal-soft: #e8f5f3;
+  --steel: #eef5f8;
+  --gold: #a76f2a;
+  --shadow: 0 20px 60px rgba(20, 51, 74, 0.12);
+  --radius: 8px;
+  font-family: "Inter", "Noto Sans SC", "Microsoft YaHei", system-ui, -apple-system, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.site-header {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 20;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 7vw;
+  color: #fff;
+  transition: background 180ms ease, box-shadow 180ms ease, color 180ms ease;
+}
+
+.site-header.is-scrolled {
+  background: rgba(255, 255, 255, 0.94);
+  color: var(--navy);
+  box-shadow: 0 8px 28px rgba(18, 40, 56, 0.08);
+  backdrop-filter: blur(16px);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border: 1px solid currentColor;
+  font-weight: 800;
+}
+
+.nav {
+  display: flex;
+  gap: 28px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.nav a {
+  opacity: 0.84;
+}
+
+.nav a:hover {
+  opacity: 1;
+}
+
+.hero {
+  position: relative;
+  min-height: 84vh;
+  display: grid;
+  align-items: center;
+  padding: 120px 7vw 92px;
+  color: #fff;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(14, 32, 47, 0.86) 0%, rgba(14, 32, 47, 0.66) 42%, rgba(14, 32, 47, 0.14) 100%),
+    url("./assets/hero-biomechanics.png") center / cover no-repeat;
+  transform: scale(1.02);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+}
+
+.affiliation {
+  margin: 0 0 22px;
+  font-size: 18px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(64px, 10vw, 116px);
+  line-height: 1;
+  font-weight: 800;
+}
+
+.role {
+  margin: 24px 0 0;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: clamp(20px, 2.5vw, 30px);
+  font-weight: 600;
+}
+
+.intro {
+  max-width: 680px;
+  margin: 28px 0 0;
+  color: rgba(255, 255, 255, 0.84);
+  font-size: 19px;
+  line-height: 1.8;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 36px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 0 22px;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 700;
+  border: 1px solid transparent;
+  transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
+}
+
+.button:hover {
+  transform: translateY(-1px);
+}
+
+.button.primary {
+  background: var(--teal);
+  color: #fff;
+}
+
+.button.secondary {
+  border-color: rgba(255, 255, 255, 0.52);
+  color: #fff;
+}
+
+.stats-band {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.stats-band div {
+  background: #fff;
+  padding: 24px 7vw 24px 32px;
+}
+
+.stats-band strong,
+.stats-band span {
+  display: block;
+}
+
+.stats-band strong {
+  color: var(--navy);
+  font-size: 22px;
+  line-height: 1.25;
+}
+
+.stats-band span {
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.section {
+  padding: 92px 7vw;
+}
+
+.two-column {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(300px, 0.7fr);
+  gap: 72px;
+  align-items: start;
+}
+
+h2 {
+  margin: 0 0 26px;
+  color: var(--navy);
+  font-size: clamp(32px, 4vw, 48px);
+  line-height: 1.16;
+}
+
+h3 {
+  margin: 0 0 12px;
+  color: var(--navy);
+  font-size: 22px;
+  line-height: 1.35;
+}
+
+p {
+  margin: 0 0 18px;
+}
+
+.section-head {
+  max-width: 760px;
+  margin-bottom: 44px;
+}
+
+.section-head p {
+  color: var(--muted);
+  font-size: 18px;
+}
+
+.profile-panel {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 28px;
+  box-shadow: var(--shadow);
+  background: #fff;
+}
+
+.portrait-placeholder {
+  display: grid;
+  place-items: center;
+  width: 132px;
+  height: 132px;
+  margin-bottom: 28px;
+  background: linear-gradient(135deg, var(--navy), var(--teal));
+  color: #fff;
+  font-size: 68px;
+  font-weight: 800;
+}
+
+dl {
+  margin: 0;
+}
+
+dl div {
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  gap: 14px;
+  padding: 14px 0;
+  border-top: 1px solid var(--line);
+}
+
+dt {
+  color: var(--muted);
+}
+
+dd {
+  margin: 0;
+  font-weight: 650;
+}
+
+.focus-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+.focus-grid article {
+  min-height: 250px;
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #fff;
+}
+
+.icon-line {
+  display: block;
+  width: 46px;
+  height: 3px;
+  margin-bottom: 30px;
+  background: var(--teal);
+}
+
+.focus-grid p,
+.project-list,
+.publication-list {
+  color: var(--muted);
+}
+
+.teaching-section,
+.impact-section {
+  background: var(--steel);
+}
+
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.timeline div {
+  padding: 34px;
+  background: #fff;
+  border-radius: var(--radius);
+  border: 1px solid #d5e2e8;
+}
+
+.timeline span {
+  display: block;
+  margin-bottom: 24px;
+  color: var(--teal);
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.works-layout {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 54px;
+}
+
+.publication-list,
+.project-list {
+  padding-left: 22px;
+}
+
+.publication-list li,
+.project-list li {
+  margin-bottom: 16px;
+}
+
+.impact-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.impact-card {
+  max-width: 720px;
+}
+
+.impact-card p {
+  color: var(--muted);
+  font-size: 18px;
+}
+
+.impact-metrics {
+  display: grid;
+  gap: 18px;
+}
+
+.impact-metrics div {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: baseline;
+  padding: 22px 0;
+  border-bottom: 1px solid #cddde5;
+}
+
+.impact-metrics strong {
+  color: var(--navy);
+  font-size: 32px;
+  line-height: 1.1;
+}
+
+.impact-metrics span {
+  color: var(--muted);
+}
+
+.contact-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.contact-section div {
+  max-width: 760px;
+}
+
+.contact-section p {
+  color: var(--muted);
+  font-size: 18px;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 28px 7vw;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.footer p {
+  margin: 0;
+}
+
+@media (max-width: 1100px) {
+  .focus-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stats-band {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .works-layout,
+  .impact-section,
+  .two-column {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .site-header {
+    height: auto;
+    padding: 14px 22px;
+    align-items: flex-start;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .hero {
+    min-height: 82vh;
+    padding: 112px 24px 76px;
+  }
+
+  .hero-bg {
+    background:
+      linear-gradient(180deg, rgba(14, 32, 47, 0.9) 0%, rgba(14, 32, 47, 0.78) 54%, rgba(14, 32, 47, 0.38) 100%),
+      url("./assets/hero-biomechanics.png") center / cover no-repeat;
+  }
+
+  .intro {
+    font-size: 17px;
+  }
+
+  .stats-band,
+  .focus-grid,
+  .timeline {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-band div {
+    padding: 22px 24px;
+  }
+
+  .section {
+    padding: 72px 24px;
+  }
+
+  .focus-grid article,
+  .timeline div {
+    min-height: auto;
+  }
+
+  .contact-section,
+  .footer {
+    display: block;
+  }
+
+  .contact-section .button {
+    margin-top: 14px;
+  }
+
+  .footer p + p {
+    margin-top: 10px;
+  }
+}
